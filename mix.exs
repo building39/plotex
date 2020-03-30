@@ -5,7 +5,7 @@ defmodule Plotex.MixProject do
     [
       app: :plotex,
       version: "0.3.0",
-      elixir: "~> 1.6",
+      elixir: "~> 1.10.2",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       description: description(),
@@ -35,16 +35,15 @@ defmodule Plotex.MixProject do
     ]
   end
 
-
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
       {:ex_doc, ">= 0.0.0", only: :dev},
-      {:phoenix_html, "~> 2.13", optional: true},
-      {:ex_cldr_dates_times, "~> 2.2", optional: true},
+      {:phoenix_html, "~> 2.14", optional: true},
+      {:ex_cldr_dates_times, "~> 2.3", optional: true},
       {:tzdata, "~> 1.0", optional: true},
-      {:calendar, "~> 1.0.0", optional: true},
-      {:phoenix_live_view, "~> 0.4.1", optional: true}
+      {:calendar, "~> 1.0", optional: true},
+      {:phoenix_live_view, "== 0.7.1", optional: true}
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
     ]
