@@ -82,7 +82,6 @@ defmodule Plotex.Output.Svg do
 
   """
   def generate(%Plotex{} = plot, %Options{} = opts) do
-
     xaxis = plot.config.xaxis
     yaxis = plot.config.yaxis
     xfmt = plot.config.xaxis.formatter
@@ -106,7 +105,7 @@ defmodule Plotex.Output.Svg do
         <% end %>
 
         <defs>
-          <%= for {dataset, idx} <- @datasets do %>
+          <%= for {_dataset, idx} <- @datasets do %>
 
             <%= case Options.data(@opts,idx).shape do %>
 
@@ -269,5 +268,5 @@ defmodule Plotex.Output.Svg do
     """
   end
 
-  defp float(f), do: :erlang.float_to_binary(f, [decimals: 3])
+  defp float(f), do: :erlang.float_to_binary(f, decimals: 3)
 end
